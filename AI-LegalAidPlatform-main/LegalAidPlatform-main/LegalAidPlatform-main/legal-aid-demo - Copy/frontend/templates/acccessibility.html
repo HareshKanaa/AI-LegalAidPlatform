@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Link - Accessibility Features</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f9;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Header Styling */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #1A237E;
+            text-align: center;
+        }
+        
+        .header img {
+            width: 80px;
+            height: auto;
+            padding: 20px;
+        }
+
+        .header h1 {
+            flex-grow: 1;
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            margin: 0;
+        }
+
+
+        /* Accessibility Section */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #1A237E;
+            font-size: 28px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+
+        /* Buttons */
+        .btn {
+            background-color: #1A237E;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #FFD700;
+            color: #1A237E;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* High Contrast Mode 
+        body.high-contrast {
+            background-color: black;
+            color: #FFD700;
+        }
+
+        body.high-contrast .container {
+            background-color: #222;
+            color: white;
+            border: 2px solid #FFD700;
+        }
+
+        body.high-contrast .h2 {
+            
+            color: white;
+            
+        }*/
+
+        .navbar {
+            background-color: #283593;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #FFD700;
+        }
+
+        footer {
+            background: #1A237E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 1rem;
+        }
+      
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo left">
+        <h1>Accessibility Features</h1>
+        <img src="law.webp" alt="Legal Scales" class="header-logo right">
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a>  
+        <a href="authentication.html" class="nav-link">Login / Signup</a> 
+        <a href="chatbot.html" class="nav-link">Chatbot</a> 
+        <a href="templates.html" class="nav-link">Legal Templates</a>
+        <a href="lawyers.html" class="nav-link">Lawyer Directory</a>
+        <a href="acccessibility.html" class="nav-link active">Accessibility</a>
+    </nav>
+
+    <div class="container">
+        <h2>🔊 Speech-to-Text (STT)</h2>
+        <p>Click the button and speak. Your speech will be converted to text.</p>
+        <button class="btn" onclick="startSpeechToText()">Start Speaking</button>
+        <p id="speech-output">Your speech will appear here...</p>
+    </div>
+
+    <div class="container">
+        <h2>📢 Text-to-Speech (TTS)</h2>
+        <p>Enter text below and click "Speak" to hear it.</p>
+        <textarea id="tts-text" rows="3" style="width: 100%; padding: 10px;"></textarea>
+        <button class="btn" onclick="speakText()">Speak</button>
+    </div>
+    
+    <!--<div class="container">
+        <h2>🌗 High Contrast Mode</h2>
+        <p>Improve visibility with high-contrast colors.</p>
+        <button class="btn" onclick="toggleContrast()">Toggle High Contrast</button>
+    </div>-->
+
+    <div class="container">
+        <h2>🔠 Font Size Adjustment</h2>
+        <p>Increase or decrease the font size for better readability.</p>
+        <button class="btn" onclick="changeFontSize('increase')">Increase Font</button>
+        <button class="btn" onclick="changeFontSize('decrease')">Decrease Font</button>
+    </div>
+
+    <div class="container">
+        <h2>⌨️ Keyboard Navigation</h2>
+        <p>Use the <b>Tab</b> key to navigate, <b>Enter</b> to click, and <b>Esc</b> to reset.</p>
+    </div>
+
+    <footer>
+        <p class="para">&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
+     </footer>
+
+    <script>
+        // Speech-to-Text (STT)
+        function startSpeechToText() {
+            const output = document.getElementById("speech-output");
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = "en-US";
+
+            recognition.onstart = () => { output.innerHTML = "Listening..."; };
+            recognition.onspeechend = () => { recognition.stop(); };
+            recognition.onresult = event => {
+                output.innerHTML = event.results[0][0].transcript;
+            };
+
+            recognition.start();
+        }
+
+        // Text-to-Speech (TTS)
+        function speakText() {
+            const text = document.getElementById("tts-text").value;
+            if (!text) return alert("Please enter text to read.");
+            
+            // Stop any currently speaking text
+            window.speechSynthesis.cancel(); 
+            
+            // Create new speech instance
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-US";
+
+            // Speak the text
+            window.speechSynthesis.speak(speech);
+        }
+
+
+        // High Contrast Mode
+        function toggleContrast() {
+            document.body.classList.toggle("high-contrast");
+        }
+
+        // Font Size Adjustment
+        function changeFontSize(action) {
+            let body = document.body;
+            let currentSize = window.getComputedStyle(body, null).getPropertyValue('font-size');
+            let newSize = action === "increase" ? parseFloat(currentSize) * 1.1 : parseFloat(currentSize) * 0.9;
+            body.style.fontSize = newSize + "px";
+        }
+
+        // Keyboard Navigation
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                document.body.style.fontSize = "16px"; // Reset font size
+                document.body.classList.remove("high-contrast"); // Disable contrast
+            }
+        });
+
+    </script>
+</body>
+</html>

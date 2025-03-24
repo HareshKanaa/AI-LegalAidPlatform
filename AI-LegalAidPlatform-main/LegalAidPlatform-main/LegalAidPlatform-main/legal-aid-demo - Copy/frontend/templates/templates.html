@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Document Templates - Legal Link</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #1A237E;
+            color: white;
+            text-align: center;
+        }
+
+        .header-logo {
+            width: 60px;
+        }
+
+        .header img {
+            width: 80px;
+            height: auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #283593;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #FFD700;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #1A237E;
+        }
+
+        /* Form Section */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-section {
+            margin: 20px 0;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        select, input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        /* Download Button */
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #1A237E;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #FFD700;
+            color: #1A237E;
+        }
+
+        footer {
+            background: #1A237E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 1rem;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔹 Header -->
+    <header class="header">
+        <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo left">
+        <h1>Legal Document Templates</h1>
+        <img src="law.webp" alt="Legal Scales" class="header-logo right">
+    </header>
+
+    <!-- 🛠 Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="authentication.html" class="nav-link">Login / Signup</a> 
+        <a href="chatbot.html" class="nav-link">Chatbot</a>
+        <a href="templates.html" class="nav-link active">Legal Templates</a>
+        <a href="lawyers.html" class="nav-link">Lawyer Directory</a>
+        <a href="accessibility.html" class="nav-link">Accessibility</a>
+    </nav>
+
+    <!-- 🎭 Hero Section -->
+    <section class="hero">
+        <h2>Generate Legal Documents with AI</h2>
+        <p>Select a template, fill in the details, and get a legally formatted document instantly.</p>
+    </section>
+
+    <!-- 📜 Document Selection -->
+    <div class="container">
+        <div class="form-section fade-in">
+            <label for="document-type">Choose a document type:</label>
+            <select id="document-type">
+                <option value="">-- Select Document --</option>
+                <option value="contract">Employment Contract</option>
+                <option value="will">Last Will & Testament</option>
+                <option value="nda">Non-Disclosure Agreement</option>
+                <option value="affidavit">Affidavit</option>
+            </select>
+        </div>
+
+        <!-- AI-Powered Form -->
+        <div id="form-container" class="fade-in"></div>
+
+        <!-- Download Button -->
+        <button id="download-btn" class="btn" style="display:none;">Download Document</button>
+    </div>
+
+    <!-- ⚖️ Footer -->
+    <footer>
+        <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
+     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const documentType = document.getElementById("document-type");
+            const formContainer = document.getElementById("form-container");
+            const downloadBtn = document.getElementById("download-btn");
+
+            documentType.addEventListener("change", function () {
+                const selectedDoc = this.value;
+                formContainer.innerHTML = ""; // Clear previous form
+
+                if (!selectedDoc) {
+                    downloadBtn.style.display = "none";
+                    return;
+                }
+
+                let formHTML = `<form id="legal-form">`;
+
+                if (selectedDoc === "contract") {
+                    formHTML += `
+                        <label>Employer Name:</label>
+                        <input type="text" name="employer" required>
+                        <label>Employee Name:</label>
+                        <input type="text" name="employee" required>
+                        <label>Job Title:</label>
+                        <input type="text" name="job" required>
+                        <label>Salary:</label>
+                        <input type="text" name="salary" required>
+                    `;
+                } else if (selectedDoc === "will") {
+                    formHTML += `
+                        <label>Full Name:</label>
+                        <input type="text" name="fullName" required>
+                        <label>Beneficiaries:</label>
+                        <textarea name="beneficiaries" required></textarea>
+                        <label>Executor Name:</label>
+                        <input type="text" name="executor" required>
+                    `;
+                } else if (selectedDoc === "nda") {
+                    formHTML += `
+                        <label>Company Name:</label>
+                        <input type="text" name="company" required>
+                        <label>Recipient Name:</label>
+                        <input type="text" name="recipient" required>
+                        <label>Confidentiality Period:</label>
+                        <input type="text" name="period" required>
+                    `;
+                } else if (selectedDoc === "affidavit") {
+                    formHTML += `
+                        <label>Affiant Name:</label>
+                        <input type="text" name="affiant" required>
+                        <label>Statement:</label>
+                        <textarea name="statement" required></textarea>
+                    `;
+                }
+
+                formHTML += `<button type="submit" class="btn">Generate Document</button></form>`;
+                formContainer.innerHTML = formHTML;
+
+                document.getElementById("legal-form").addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    alert("Document Generated! Downloading...");
+                    downloadBtn.style.display = "block";
+                });
+            });
+
+            downloadBtn.addEventListener("click", function () {
+                alert("Downloading Document...");
+            });
+        });
+    </script>
+
+</body>
+</html>

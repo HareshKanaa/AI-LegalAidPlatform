@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Link - User & Lawyer Login</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #1A237E;
+            text-align: center;
+        }
+        
+        .header img {
+            width: 100px;
+            height: auto;
+            padding: 20px;
+        }
+
+        .header h1 {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 36px;
+            color: white;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #283593;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #FFD700;
+        }
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .form-box {
+            width: 350px;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+        }
+
+        .button-box {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .toggle-btn {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            background: #ddd;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .toggle-btn.active {
+            background: #1A237E;
+            color: white;
+        }
+
+        .input-group {
+            display: none;
+            flex-direction: column;
+            transition: all 0.5s;
+        }
+
+        .input-group.active {
+            display: flex;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #1A237E;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #FFD700;
+            color: #1A237E;
+        }
+
+        .toggle-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .toggle-link a {
+            color: #1A237E;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .toggle-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #1A237E;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔹 Header -->
+    <header class="header">
+        <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem">
+        <h1>Legal Link - Login / Signup</h1>
+        <img src="law.webp" alt="Legal Scales">
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="authentication.html" class="nav-link active">Login / Signup</a> 
+        <a href="chatbot.html" class="nav-link">Chatbot</a>
+        <a href="templates.html" class="nav-link">Legal Templates</a>
+        <a href="lawyers.html" class="nav-link">Lawyer Directory</a>
+        <a href="accessibility.html" class="nav-link">Accessibility</a>
+    </nav>
+
+    <!-- Authentication Form -->
+    <div class="auth-container">
+        <div class="form-box">
+            <div class="button-box">
+                <button id="userLoginBtn" class="toggle-btn active" onclick="showForm('userLogin')">User Login</button>
+                <button id="lawyerLoginBtn" class="toggle-btn" onclick="showForm('lawyerLogin')">Lawyer Login</button>
+            </div>
+
+            <!-- User Login Form -->
+            <form id="userLogin" class="input-group active">
+                <input type="email" id="userEmail" class="input-field" placeholder="Email" required>
+                <input type="password" id="userPassword" class="input-field" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Login</button>
+                <p class="toggle-link">New User? <a href="#" onclick="showForm('userSignup')">Signup</a></p>
+            </form>
+
+            <!-- Lawyer Login Form -->
+            <form id="lawyerLogin" class="input-group">
+                <input type="email" id="lawyerEmail" class="input-field" placeholder="Lawyer Email" required>
+                <input type="password" id="lawyerPassword" class="input-field" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Login</button>
+                <p class="toggle-link">New Lawyer? <a href="#" onclick="showForm('lawyerSignup')">Signup</a></p>
+            </form>
+
+            <!-- User Signup Form -->
+            <form id="userSignup" class="input-group">
+                <input type="text" id="userName" class="input-field" placeholder="Full Name" required>
+                <input type="email" id="userSignupEmail" class="input-field" placeholder="Email" required>
+                <input type="password" id="userSignupPassword" class="input-field" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Signup</button>
+                <p class="toggle-link">Already have an account? <a href="#" onclick="showForm('userLogin')">Login</a></p>
+            </form>
+
+            <!-- Lawyer Signup Form -->
+            <form id="lawyerSignup" class="input-group">
+                <input type="text" id="lawyerName" class="input-field" placeholder="Full Name" required>
+                <input type="email" id="lawyerSignupEmail" class="input-field" placeholder="Email" required>
+                <input type="password" id="lawyerSignupPassword" class="input-field" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Signup</button>
+                <p class="toggle-link">Already have an account? <a href="#" onclick="showForm('lawyerLogin')">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ⚖️ Footer -->
+    <footer>
+        <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function showForm(formId) {
+            document.querySelectorAll(".input-group").forEach(form => form.classList.remove("active"));
+            document.getElementById(formId).classList.add("active");
+            document.querySelectorAll(".toggle-btn").forEach(btn => btn.classList.remove("active"));
+            if (formId.includes("user")) document.getElementById("userLoginBtn").classList.add("active");
+            else document.getElementById("lawyerLoginBtn").classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
