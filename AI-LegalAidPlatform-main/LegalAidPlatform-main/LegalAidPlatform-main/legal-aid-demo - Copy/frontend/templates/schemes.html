@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Government Schemes</title>
+    <style>
+        /* Header styling */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #1A237E;
+            text-align: center;
+        }
+        
+        .header img {
+            width: 80px;
+            height: auto;
+            padding: 20px;
+        }
+
+        .header h1 {
+            flex-grow: 1;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .scheme-box {
+            background:  #1A237E;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .scheme-box:hover {
+            background: #283593;
+            color: #ffffff;
+        }
+        .scheme-details {
+            display: none;
+            margin-top: 10px;
+        }
+        .scheme-details a {
+            text-decoration: none;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .container h1{
+            color: #1A237E;
+        }
+        .scheme-box.active .scheme-details {
+            display: block;
+        }
+
+        .navbar {
+            background-color: #283593;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #FFD700;
+        }
+        footer {
+            background: #1A237E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔹 Header -->
+    <header class="header">
+        <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem">
+        <h1>Legal Link - Government Schemes</h1>
+        <img src="law.webp" alt="Legal Scales">
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a> 
+        <a href="authentication.html" class="nav-link">Login / Signup</a> 
+        <a href="chatbot.html" class="nav-link">Chatbot</a> 
+        <a href="templates.html" class="nav-link">Legal Templates</a> 
+        <a href="lawyers.html" class="nav-link">Lawyer Directory</a>
+        <a href="schemes.html" class="nav-link active">Government Schemes</a>  
+        <a href="acccessibility.html" class="nav-link">Accessibility</a>
+    </nav>
+
+    <div class="container">
+        <h1>Tamil Nadu Government Schemes</h1>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme1')">
+            <h2>1. Government Schemes for Women</h2>
+            <div id="scheme1" class="scheme-details">
+                <p>Various schemes for women's empowerment, financial support, and safety.</p>
+                <a href="./schemes/women_schemes.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme2')">
+            <h2>2. Government Schemes for Farmers</h2>
+            <div id="scheme2" class="scheme-details">
+                <p>Subsidies, financial aid, and agricultural welfare programs for farmers.</p>
+                <a href="./schemes/farmers_schemes.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme3')">
+            <h2>3. Government Schemes for Students</h2>
+            <div id="scheme3" class="scheme-details">
+                <p>Scholarships, free education programs, and financial support for students.</p>
+                <a href="./schemes/students_schemes.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme4')">
+            <h2>4. Government Schemes for Transgenders</h2>
+            <div id="scheme4" class="scheme-details">
+                <p>Welfare programs, employment assistance, and social security for transgenders.</p>
+                <a href="./schemes/transgenders_schemes.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme5')">
+            <h2>5. Government Schemes for Senior Citizens</h2>
+            <div id="scheme5" class="scheme-details">
+                <p>Pension schemes, healthcare, and financial aid for senior citizens.</p>
+                <a href="./schemes/seniorcitizen_schemes.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme6')">
+            <h2>6. Government Schemes for Socio-Economic Citizens</h2>
+            <div id="scheme6" class="scheme-details">
+                <p>Welfare and support programs for economically weaker sections.</p>
+                <a href="./schemes/socio_economic_schemes.html">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ⚖️ Footer -->
+    <footer>
+        <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            details.parentElement.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Government Schemes for Women</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #1A237E;
+            text-align: center;
+        }
+        
+        .header img {
+            width: 80px;
+            height: auto;
+            padding: 20px;
+        }
+
+        .header h1 {
+            flex-grow: 1;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            margin: 0;
+        }
+
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: #FFD700;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #1A237E;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.scheme-box {
+            background:  #1A237E;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .scheme-box:hover {
+            background: #283593;
+            color: #ffffff;
+        }
+        .scheme-details {
+            display: none;
+            margin-top: 10px;
+        }
+        .scheme-details a {
+            text-decoration: none;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .container h1{
+            color: #1A237E;
+        }
+        .scheme-box.active .scheme-details {
+            display: block;
+        }
+
+
+.navbar {
+            background-color: #283593;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #FFD700;
+        }
+        footer {
+            background: #1A237E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 1rem;
+        }
+
+
+</style>
+
+<body>
+
+    <header class="header">
+        <img src="../Emblem_of_India_(Gold).png" alt="Indian Emblem">
+        <h1>Government Schemes for Women</h1>
+        <img src="../law.webp" alt="Legal Scales">
+    </header>
+
+    <nav class="navbar">
+        <a href="../schemes.html" class="nav-link">⬅ Back</a>
+        <a href="../index.html" class="nav-link">Home</a> 
+        <a href="../authentication.html" class="nav-link">Login / Signup</a> 
+        <a href="../chatbot.html" class="nav-link">Chatbot</a> 
+        <a href="../templates.html" class="nav-link">Legal Templates</a> 
+        <a href="../lawyers.html" class="nav-link">Lawyer Directory</a>
+        <a href="../schemes.html" class="nav-link active">Government Schemes</a>  
+        <a href="../acccessibility.html" class="nav-link">Accessibility</a>
+    </nav>
+
+    <div class="container">
+        <h3 class="intro">The Government of Tamil Nadu has implemented various schemes aimed at promoting the welfare and empowerment of women in the state. Below is a list of key schemes:</h3>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme1')">
+            <h2>1. Pudhumai Penn Scheme</h2>
+            <div id="scheme1" class="scheme-details">
+                <p>Focuses on enhancing the educational and economic status of women through various support mechanisms.</p>
+                <a href="https://pmgschub.gov.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme2')">
+            <h2>2. Tamil Pudhalvan</h2>
+            <div id="scheme2" class="scheme-details">
+                <p>Provides educational and employment opportunities to women, fostering their overall development.</p>
+                <a href="https://kancheepuram.nic.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme3')">
+            <h2>3. Free Travel for Women in Government Buses</h2>
+            <div id="scheme3" class="scheme-details">
+                <p>Facilitates safe and cost-free transportation for women across the state.</p>
+                <a href="https://www.tnsocialwelfare.org/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme4')">
+            <h2>4. Marriage Assistance Schemes</h2>
+            <div id="scheme4" class="scheme-details">
+                <p>Various financial assistance programs to support women during marriage.</p>
+                <ul>
+                    <li><b>Dr. Dharmambal Ammaiyar Ninaivu Widow Remarriage Assistance Scheme</b> - Encourages widow remarriage.</li>
+                    <li><b>E.V.R. Maniammaiyar Ninaivu Scheme</b> - Supports daughters of poor widows.</li>
+                    <li><b>Annai Therasa Ninaivu Scheme</b> - Assists orphan girls in marriage.</li>
+                    <li><b>Dr. Muthulakshmi Reddy Ninaivu Scheme</b> - Promotes inter-caste marriages.</li>
+                </ul>
+                <a href="https://www.cleartax.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme5')">
+            <h2>5. Service Homes</h2>
+            <div id="scheme5" class="scheme-details">
+                <p>Provides shelter and support services to destitute women and girls.</p>
+                <a href="https://www.wikipedia.org/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme6')">
+            <h2>6. Chief Minister’s Girl Child Protection Scheme</h2>
+            <div id="scheme6" class="scheme-details">
+                <p>Aims to prevent gender discrimination and empower girl children through direct government investment.</p>
+                <a href="https://www.tnsocialwelfare.org/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme7')">
+            <h2>7. Puratchi Thalaivar MGR Nutritious Meal Programme</h2>
+            <div id="scheme7" class="scheme-details">
+                <p>Enhances school enrollment while improving the nutritional levels among children.</p>
+                <a href="https://www.tnsocialwelfare.org/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme8')">
+            <h2>8. Working Women Hostels</h2>
+            <div id="scheme8" class="scheme-details">
+                <p>Provides safe and affordable accommodation for working women in district headquarters and industrial areas.</p>
+                <a href="https://www.wikipedia.org/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme9')">
+            <h2>9. Kalaignar Magalir Urimai Thittam (Women's Rights Scheme)</h2>
+            <div id="scheme9" class="scheme-details">
+                <p>Provides financial assistance of ₹1,000 per month to eligible women residents.</p>
+                <a href="https://www.cleartax.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme10')">
+            <h2>10. Women Helpline - 181</h2>
+            <div id="scheme10" class="scheme-details">
+                <p>A toll-free helpline providing immediate assistance to women in distress.</p>
+                <a href="https://whl.tnsw.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
+    </footer>
+    <script>
+        function toggleDetails(id) {
+        var details = document.getElementById(id);
+        details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+
+    </script>
+</body>
+</html>
