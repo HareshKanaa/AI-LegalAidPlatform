@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Government Schemes for Farmers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #1A237E;
+            text-align: center;
+        }
+        
+        .header img {
+            width: 80px;
+            height: auto;
+            padding: 20px;
+        }
+
+        .header h1 {
+            flex-grow: 1;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            margin: 0;
+        }
+
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: #FFD700;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #1A237E;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.scheme-box {
+            background:  #1A237E;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .scheme-box:hover {
+            background: #283593;
+            color: #ffffff;
+        }
+        .scheme-details {
+            display: none;
+            margin-top: 10px;
+        }
+        .scheme-details a {
+            text-decoration: none;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .container h1{
+            color: #1A237E;
+        }
+        .scheme-box.active .scheme-details {
+            display: block;
+        }
+
+
+.navbar {
+            background-color: #283593;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #FFD700;
+        }
+        footer {
+            background: #1A237E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 1rem;
+        }
+
+
+</style>
+
+<body>
+
+    <header class="header">
+        <img src="../Emblem_of_India_(Gold).png" alt="Indian Emblem">
+        <h1>Government Schemes for Students</h1>
+        <img src="../law.webp" alt="Legal Scales">
+    </header>
+
+    <nav class="navbar">
+        <a href="../schemes.html" class="nav-link">⬅ Back</a>
+        <a href="../index.html" class="nav-link">Home</a> 
+        <a href="../authentication.html" class="nav-link">Login / Signup</a> 
+        <a href="../chatbot.html" class="nav-link">Chatbot</a> 
+        <a href="../templates.html" class="nav-link">Legal Templates</a> 
+        <a href="../lawyers.html" class="nav-link">Lawyer Directory</a>
+        <a href="../schemes.html" class="nav-link active">Government Schemes</a>  
+        <a href="../acccessibility.html" class="nav-link">Accessibility</a>
+    </nav>
+
+    <div class="container">
+        <h2>Tamil Nadu Student Welfare Schemes</h2>
+        <p>The Government of Tamil Nadu has implemented several schemes to support and empower students across the state. Below are some key initiatives:</p>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme1')">
+            <h3>1. Pudhumai Penn Scheme</h3>
+            <div id="scheme1" class="scheme-details">
+                <p>Provides ₹1,000 per month to girl students who studied in government schools from Class V to XII, supporting their higher education.</p>
+                <a href="https://tvu.edu.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme2')">
+            <h3>2. Tamil Pudhalvan Scheme</h3>
+            <div id="scheme2" class="scheme-details">
+                <p>Offers ₹1,000 per month to boys from government schools pursuing higher education.</p>
+                <a href="https://tvu.edu.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme3')">
+            <h3>3. Scheme for Meritorious Students</h3>
+            <div id="scheme3" class="scheme-details">
+                <p>Provides full educational expenses for top 10 students from each district belonging to BC, MBC, and DNC categories.</p>
+                <a href="https://myscheme.gov.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme4')">
+            <h3>4. Free Education for BC, MBC & DNC Students</h3>
+            <div id="scheme4" class="scheme-details">
+                <p>Scholarships, tuition fee waivers, and maintenance allowances for students from marginalized backgrounds.</p>
+                <a href="https://kadamboverseas.com/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme5')">
+            <h3>5. Incentive Scheme for MBC/DNC Rural Girl Students</h3>
+            <div id="scheme5" class="scheme-details">
+                <p>₹500 per annum for Class III-V and ₹1,000 per annum for Class VI rural girl students of MBC/DNC communities.</p>
+                <a href="https://myscheme.gov.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme6')">
+            <h3>6. Chief Minister’s Breakfast Scheme</h3>
+            <div id="scheme6" class="scheme-details">
+                <p>Provides free breakfast to primary school students to prevent hunger and improve attendance.</p>
+                <a href="https://en.wikipedia.org/wiki/Chief_Minister’s_Breakfast_Scheme" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme7')">
+            <h3>7. Naan Mudhalvan</h3>
+            <div id="scheme7" class="scheme-details">
+                <p>Equips students with skills in coding, robotics, and spoken English to enhance their career prospects.</p>
+                <a href="https://en.wikipedia.org/wiki/Naan_Mudhalvan" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme8')">
+            <h3>8. Minor Research Project</h3>
+            <div id="scheme8" class="scheme-details">
+                <p>Grants financial aid to faculty members in colleges for conducting minor research projects.</p>
+                <a href="https://tnsche.tn.gov.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme9')">
+            <h3>9. Student's Mini Project</h3>
+            <div id="scheme9" class="scheme-details">
+                <p>Encourages undergraduate and postgraduate students to work on innovative mini research projects.</p>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme10')">
+            <h3>10. Special Care for Slow Learners</h3>
+            <div id="scheme10" class="scheme-details">
+                <p>Offers remedial coaching and special support programs for slow learners to improve their academic performance.</p>
+                <a href="https://tnsche.tn.gov.in/" target="_blank">Learn More</a>
+            </div>
+        </div>
+    </div>   
+    <footer>
+        <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
+    </footer>
+    <script>
+        function toggleDetails(id) {
+        var details = document.getElementById(id);
+        details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+
+    </script>
+</body>
+</html>

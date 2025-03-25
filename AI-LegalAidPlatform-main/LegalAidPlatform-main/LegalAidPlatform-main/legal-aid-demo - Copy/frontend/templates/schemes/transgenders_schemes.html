@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Government Schemes for Farmers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #1A237E;
+            text-align: center;
+        }
+        
+        .header img {
+            width: 80px;
+            height: auto;
+            padding: 20px;
+        }
+
+        .header h1 {
+            flex-grow: 1;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            margin: 0;
+        }
+
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: #FFD700;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #1A237E;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.scheme-box {
+            background:  #1A237E;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .scheme-box:hover {
+            background: #283593;
+            color: #ffffff;
+        }
+        .scheme-details {
+            display: none;
+            margin-top: 10px;
+        }
+        .scheme-details a {
+            text-decoration: none;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .container h1{
+            color: #1A237E;
+        }
+        .scheme-box.active .scheme-details {
+            display: block;
+        }
+
+
+.navbar {
+            background-color: #283593;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #FFD700;
+        }
+        footer {
+            background: #1A237E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 1rem;
+        }
+
+
+</style>
+
+<body>
+
+    <header class="header">
+        <img src="../Emblem_of_India_(Gold).png" alt="Indian Emblem">
+        <h1>Government Schemes for Transgenders</h1>
+        <img src="../law.webp" alt="Legal Scales">
+    </header>
+
+    <nav class="navbar">
+        <a href="../schemes.html" class="nav-link">⬅ Back</a>
+        <a href="../index.html" class="nav-link">Home</a> 
+        <a href="../authentication.html" class="nav-link">Login / Signup</a> 
+        <a href="../chatbot.html" class="nav-link">Chatbot</a> 
+        <a href="../templates.html" class="nav-link">Legal Templates</a> 
+        <a href="../lawyers.html" class="nav-link">Lawyer Directory</a>
+        <a href="../schemes.html" class="nav-link active">Government Schemes</a>  
+        <a href="../acccessibility.html" class="nav-link">Accessibility</a>
+    </nav>
+
+    <div class="container">
+        <h2>Tamil Nadu Transgender Welfare Schemes</h2>
+        <p>The Government of Tamil Nadu has implemented various schemes to support and empower transgender individuals in the state. Below are some key initiatives:</p>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme1')">
+            <h3>1. Tamil Nadu Transgender Welfare Board</h3>
+            <div id="scheme1" class="scheme-details">
+                <p>Established in 2008, it provides identity cards, ration cards, housing, skill training, free bus travel, and financial support.</p>
+                <a href="https://www.tnsocialwelfare.org" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme2')">
+            <h3>2. Third Genders Pension Scheme</h3>
+            <div id="scheme2" class="scheme-details">
+                <p>Offers ₹1,000 per month to destitute transgender individuals above 40 years.</p>
+                <a href="https://tg.tnsw.in" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme3')">
+            <h3>3. Employment Subsidy Scheme</h3>
+            <div id="scheme3" class="scheme-details">
+                <p>Provides a 10% payroll subsidy for new industrial units employing transgender individuals.</p>
+                <a href="https://www.legalitysimplified.com" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme4')">
+            <h3>4. Loan Assistance for Self-Help Groups</h3>
+            <div id="scheme4" class="scheme-details">
+                <p>Facilitates loans up to ₹15 lakh with a 25% subsidy to transgender self-help groups.</p>
+                <a href="https://tg.tnsw.in" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme5')">
+            <h3>5. Horizontal Reservation in Education and Employment</h3>
+            <div id="scheme5" class="scheme-details">
+                <p>Provides 1% horizontal reservation in education and government jobs.</p>
+                <a href="https://en.wikipedia.org/wiki/Transgender_rights_in_India" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme6')">
+            <h3>6. Healthcare Access Initiatives</h3>
+            <div id="scheme6" class="scheme-details">
+                <p>Includes transgender individuals in CM Health Insurance, provides compensation for gender confirmation surgeries.</p>
+                <a href="https://en.wikipedia.org/wiki/Transgender_healthcare_in_India" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme7')">
+            <h3>7. State Commission for Sexual and Gender Minorities</h3>
+            <div id="scheme7" class="scheme-details">
+                <p>Proposed to protect LGBTQIA+ rights, investigate complaints, and enforce welfare schemes.</p>
+                <a href="https://www.reddit.com/r/india/comments/tnsminorityrights" target="_blank">Learn More</a>
+            </div>
+        </div>
+    </div> 
+    <footer>
+        <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
+    </footer>
+    <script>
+        function toggleDetails(id) {
+        var details = document.getElementById(id);
+        details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+
+    </script>
+</body>
+</html>

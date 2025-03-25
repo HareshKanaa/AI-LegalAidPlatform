@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Government Schemes for Farmers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #1A237E;
+            text-align: center;
+        }
+        
+        .header img {
+            width: 80px;
+            height: auto;
+            padding: 20px;
+        }
+
+        .header h1 {
+            flex-grow: 1;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            margin: 0;
+        }
+
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: #FFD700;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #1A237E;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.scheme-box {
+            background:  #1A237E;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .scheme-box:hover {
+            background: #283593;
+            color: #ffffff;
+        }
+        .scheme-details {
+            display: none;
+            margin-top: 10px;
+        }
+        .scheme-details a {
+            text-decoration: none;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .container h1{
+            color: #1A237E;
+        }
+        .scheme-box.active .scheme-details {
+            display: block;
+        }
+
+
+.navbar {
+            background-color: #283593;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #FFD700;
+        }
+        footer {
+            background: #1A237E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 1rem;
+        }
+
+
+</style>
+
+<body>
+
+    <header class="header">
+        <img src="../Emblem_of_India_(Gold).png" alt="Indian Emblem">
+        <h1>Government Schemes for Socio-Economic Citizen</h1>
+        <img src="../law.webp" alt="Legal Scales">
+    </header>
+
+    <nav class="navbar">
+        <a href="../schemes.html" class="nav-link">⬅ Back</a>
+        <a href="../index.html" class="nav-link">Home</a> 
+        <a href="../authentication.html" class="nav-link">Login / Signup</a> 
+        <a href="../chatbot.html" class="nav-link">Chatbot</a> 
+        <a href="../templates.html" class="nav-link">Legal Templates</a> 
+        <a href="../lawyers.html" class="nav-link">Lawyer Directory</a>
+        <a href="../schemes.html" class="nav-link active">Government Schemes</a>  
+        <a href="../acccessibility.html" class="nav-link">Accessibility</a>
+    </nav>
+
+    <div class="container">
+
+        <h2>Tamil Nadu Socio-Economic Citizen Welfare Schemes</h2>
+        <p>The Government of Tamil Nadu has launched various socio-economic welfare schemes to uplift marginalized communities, enhance financial stability, and improve overall well-being. Below are some key initiatives:</p>
+        <div class="scheme-box" onclick="toggleDetails('scheme1')">
+            <h3>1. Kalaignar Magalir Urimai Thittam</h3>
+            <div id="scheme1" class="scheme-details">
+                <p>Provides a monthly assistance of ₹1,000 to over 10.6 million women heads of families to empower them financially.</p>
+                <a href="https://www.business-standard.com" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme2')">
+            <h3>2. Moovalur Ramamirtham Ammaiyar Ninaivu Marriage Assistance Scheme</h3>
+            <div id="scheme2" class="scheme-details">
+                <p>Offers financial assistance for the marriage of economically disadvantaged women. Applications must be submitted at least 40 days before marriage.</p>
+                <a href="https://dharmapuri.nic.in" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme3')">
+            <h3>3. Midday Meal Scheme</h3>
+            <div id="scheme3" class="scheme-details">
+                <p>Provides free nutritious meals to government school children, promoting attendance and child development.</p>
+                <a href="https://en.wikipedia.org/wiki/Midday_Meal_Scheme" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme4')">
+            <h3>4. Chief Minister’s Breakfast Scheme</h3>
+            <div id="scheme4" class="scheme-details">
+                <p>Ensures free breakfast for primary school children in government schools to prevent hunger and enhance learning.</p>
+                <a href="https://en.wikipedia.org/wiki/Tamil_Nadu_Chief_Minister's_Breakfast_Scheme" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme5')">
+            <h3>5. Girl Child Protection Scheme</h3>
+            <div id="scheme5" class="scheme-details">
+                <p>Provides financial assistance to families to encourage the education of girl children and prevent child marriage.</p>
+                <a href="https://www.tn.gov.in" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme6')">
+            <h3>6. Integrated Handlooms Development Scheme</h3>
+            <div id="scheme6" class="scheme-details">
+                <p>Supports handloom weavers by adopting a group approach to enhance productivity and socio-economic conditions.</p>
+                <a href="https://www.tn.gov.in" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme7')">
+            <h3>7. E-Scooter Subsidy for Gig Workers</h3>
+            <div id="scheme7" class="scheme-details">
+                <p>Offers a subsidy of ₹20,000 for gig workers involved in delivery services to reduce transportation costs.</p>
+                <a href="https://www.reuters.com" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme8')">
+            <h3>8. Senior Citizen Pension Scheme</h3>
+            <div id="scheme8" class="scheme-details">
+                <p>Provides financial assistance to destitute senior citizens aged 60 years and above to ensure their well-being.</p>
+                <a href="https://www.tn.gov.in" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme9')">
+            <h3>9. Welfare Schemes for Persons Living with HIV/AIDS</h3>
+            <div id="scheme9" class="scheme-details">
+                <p>Includes financial and nutritional support for individuals living with HIV/AIDS to improve their quality of life.</p>
+                <a href="https://www.tnsacs.in" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+        <div class="scheme-box" onclick="toggleDetails('scheme10')">
+            <h3>10. Financial Assistance Schemes for Education</h3>
+            <div id="scheme10" class="scheme-details">
+                <p>Provides scholarships and fee concessions for students from marginalized communities to promote higher education.</p>
+                <a href="https://www.tn.gov.in" target="_blank">Learn More</a>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
+    </footer>
+    <script>
+        function toggleDetails(id) {
+        var details = document.getElementById(id);
+        details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+
+    </script>
+</body>
+</html>
