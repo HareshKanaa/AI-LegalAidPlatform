@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Legal Aid Platform</title>
+    <title>Legal Link - Home Page</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Header styling */
@@ -11,45 +11,47 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px;
+            padding: 15px;
             background-color: #1A237E;
+            color: white;
             text-align: center;
         }
-        
+
+        .header-logo {
+            width: 60px;
+        }
+
         .header img {
             width: 80px;
             height: auto;
+            padding: 20px;
         }
 
-        .header h1 {
-            flex-grow: 1;
-            text-align: center;
-            font-size: 36px;
-            margin: 0;
-        }
 
         .nav-link:hover, .nav-link.active {
             color: #FFD700;
         }
 
     </style>
+    <link rel="icon" href="TamilNadu_Logo.png" type="Image/icon type">
 </head>
 <body>
 
     <!-- 🔹 Header -->
     <header class="header">
         <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem">
-        <h1>Welcome to Legal Link</h1>
-        <img src="law.webp" alt="Legal Scales">
+        <h2>Welcome to Legal Link</h2>
+        <img src="TamilNadu_Logo.png" alt="Legal Scales">
     </header>
 
     <!-- 🛠 Navigation -->
     <nav class="navbar">
         <a href="#home" class="nav-link active">Home</a>
-        <a href="authentication.html" class="nav-link">Login / Signup</a>  
+        <a href="#login" class="nav-link">Login / Signup</a>  
         <a href="#chatbot" class="nav-link">Chatbot</a> 
         <a href="#templates" class="nav-link">Legal Templates</a> 
         <a href="#lawyers" class="nav-link">Lawyer Directory</a> 
+        <a href="#schemes" class="nav-link">Government Schemes</a>
         <a href="#accessibility" class="nav-link">Accessibility</a> 
     </nav>
 
@@ -72,6 +74,13 @@
     <!-- 📌 Core Components -->
     <div class="container">
 
+        <!-- Authentication -->
+        <div id="login" class="module">
+            <h2>🔐 Login / Signup</h2>
+            <p>Authenticating Users and Lawyers</p>
+            <a href="authentication.html" class="btn">Login / Signup</a>
+        </div>
+        
         <!-- AI Chatbot -->
         <div id="chatbot" class="module">
             <h2>🤖 Chatbot for Legal Advice</h2>
@@ -91,6 +100,13 @@
             <h2>⚖️ Lawyer Directory</h2>
             <p>Find verified lawyers by specialty, language, and location.</p>
             <a href="lawyers.html" class="btn">Find Lawyers</a>
+        </div>
+
+        <!-- Government Schemes -->
+        <div id="schemes" class="module">
+            <h2>🖊️ Government Schemes</h2>
+            <p>Explore Government Schemes for support, benefit and security.</p>
+            <a href="schemes.html" class="btn">View Government Schemes</a>
         </div>
 
         <!-- Accessibility Features -->

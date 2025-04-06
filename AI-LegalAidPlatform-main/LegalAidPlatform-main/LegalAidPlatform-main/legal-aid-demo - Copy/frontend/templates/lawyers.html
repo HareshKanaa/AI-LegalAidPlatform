@@ -33,7 +33,7 @@
         /* Lawyer Directory Styles */
         .directory-container {
             max-width: 900px;
-            color: white;
+            color: #1A237E;
             margin: auto;
             padding: 20px;
             text-align: center;
@@ -97,6 +97,24 @@
             color: #1A237E;
         }
 
+        .btn-viewcases {
+            background-color: #1A237E; /* Primary color */
+            color: white;
+            border: none;
+            padding: 10px 38px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+            display: block;  /* Make sure it appears */
+            margin-top: 10px;
+        }
+
+        .btn-viewcases:hover {
+            background-color: #FFD700;
+            color: #1A237E;
+        }
+
 
         .search-bar {
             width: 100%;
@@ -120,6 +138,7 @@
         }
 
     </style>
+    <link rel="icon" href="TamilNadu_Logo.png" type="Image/icon type">
 </head>
 <body>
 
@@ -127,7 +146,7 @@
     <header class="header">
         <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem">
         <h1>Legal Link - Lawyer Directory</h1>
-        <img src="law.webp" alt="Legal Scales">
+        <img src="TamilNadu_Logo.png" alt="Legal Scales">
     </header>
 
     <nav class="navbar">
@@ -135,7 +154,8 @@
         <a href="authentication.html" class="nav-link">Login / Signup</a> 
         <a href="chatbot.html" class="nav-link">Chatbot</a> 
         <a href="templates.html" class="nav-link">Legal Templates</a> 
-        <a href="lawyers.html" class="nav-link active">Lawyer Directory</a> 
+        <a href="lawyers.html" class="nav-link active">Lawyer Directory</a>
+        <a href="schemes.html" class="nav-link">Government Schemes</a> 
         <a href="acccessibility.html" class="nav-link">Accessibility</a>
     </nav>
 
@@ -153,10 +173,10 @@
     <script>
         const lawyers = [
             { name: "Adv. Saul Goodman", specialty: "Criminal Law", language: " Tamil, English", location: "Chennai", img: "lawyers/lawyer1.jpg" },
-            { name: "Adv. Priya Sharma", specialty: "Family Law", language: "Hindi, English", location: "Delhi", img: "lawyers/lawyer2.jpg" },
-            { name: "Adv. Vikram Patel", specialty: "Corporate Law", language: "Gujarati, English", location: "Mumbai", img: "lawyers/lawyer3.jpg" },
-            { name: "Adv. Anjali Verma", specialty: "Immigration Law", language: " Marathi, English", location: "Pune", img: "lawyers/lawyer4.jpg" },
-            { name: "Adv. Sunil Menon", specialty: "Property Law", language: "Malayalam, English", location: "Kochi", img: "lawyers/lawyer5.jpg" }
+            { name: "Adv. Priya Sharma", specialty: "Family Law", language: "Tamil, English", location: "Dindigul", img: "lawyers/lawyer2.jpg" },
+            { name: "Adv. Vikram Patel", specialty: "Corporate Law", language: "Tamil, English", location: "Madurai", img: "lawyers/lawyer3.jpg" },
+            { name: "Adv. Anjali Verma", specialty: "Immigration Law", language: "Tamil, English", location: "Coimbatore", img: "lawyers/lawyer4.jpg" },
+            { name: "Adv. Sunil Menon", specialty: "Property Law", language: "Tamil, English", location: "Trichy", img: "lawyers/lawyer5.jpg" }
         ];
 
         function loadLawyers() {
@@ -213,6 +233,10 @@
 
         function bookAppointment(lawyerName) {
             alert(`Booking appointment with ${lawyerName}. Feature coming soon!`);
+        }
+
+        function viewcases(lawyerName) {
+            alert(`Previous cases of ${lawyerName}. Feature coming soon!`);
         }
 
         // Load lawyers on page load

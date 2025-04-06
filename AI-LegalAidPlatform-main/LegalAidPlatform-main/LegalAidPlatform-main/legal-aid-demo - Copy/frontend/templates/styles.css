@@ -147,10 +147,11 @@ body {
     color: var(--primary-color);
 }
 
+/*
 body {
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
+    background: url('TamilNadu_Logo.png') no-repeat center center fixed;
+    background-size: contain;
+}*/
 
 /* ⚖️ Footer */
 footer {

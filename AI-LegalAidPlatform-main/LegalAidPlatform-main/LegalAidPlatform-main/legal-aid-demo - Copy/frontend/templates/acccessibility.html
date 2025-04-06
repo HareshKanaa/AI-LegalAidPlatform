@@ -132,13 +132,14 @@
         }
       
     </style>
+    <link rel="icon" href="TamilNadu_Logo.png" type="Image/icon type">
 </head>
 <body>
 
     <header class="header">
         <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo left">
         <h1>Accessibility Features</h1>
-        <img src="law.webp" alt="Legal Scales" class="header-logo right">
+        <img src="TamilNadu_Logo.png" alt="Legal Scales" class="header-logo right">
     </header>
 
     <nav class="navbar">
@@ -147,6 +148,7 @@
         <a href="chatbot.html" class="nav-link">Chatbot</a> 
         <a href="templates.html" class="nav-link">Legal Templates</a>
         <a href="lawyers.html" class="nav-link">Lawyer Directory</a>
+        <a href="schemes.html" class="nav-link">Government Schemes</a>
         <a href="acccessibility.html" class="nav-link active">Accessibility</a>
     </nav>
 
@@ -158,11 +160,18 @@
     </div>
 
     <div class="container">
+        <h2>📢 English to Tamil Translator</h2>
+        <p>Paste your paragraph below and click "Translate" to see it in Tamil.</p>
+        <textarea id="tts-text" rows="5" style="width: 100%; padding: 10px;"></textarea>
+        <button class="btn" onclick="translateText()">Translate</button>
+    </div>
+
+    <!--<div class="container">
         <h2>📢 Text-to-Speech (TTS)</h2>
         <p>Enter text below and click "Speak" to hear it.</p>
         <textarea id="tts-text" rows="3" style="width: 100%; padding: 10px;"></textarea>
         <button class="btn" onclick="speakText()">Speak</button>
-    </div>
+    </div> -->
     
     <!--<div class="container">
         <h2>🌗 High Contrast Mode</h2>
@@ -202,7 +211,7 @@
             recognition.start();
         }
 
-        // Text-to-Speech (TTS)
+        /* Text-to-Speech (TTS)
         function speakText() {
             const text = document.getElementById("tts-text").value;
             if (!text) return alert("Please enter text to read.");
@@ -216,7 +225,25 @@
 
             // Speak the text
             window.speechSynthesis.speak(speech);
+        }*/
+
+        async function translateText() {
+        const text = document.getElementById("tts-text").value;
+        if (!text.trim()) return alert("Please enter or paste text to translate.");
+
+        try {
+            // Fetch translation from Google Translate API
+            const response = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ta&dt=t&q=${encodeURIComponent(text)}`);
+            const data = await response.json();
+            const translatedText = data[0].map(item => item[0]).join(" "); // Extract translated text
+
+            // Replace textarea content with the translated text
+            document.getElementById("tts-text").value = translatedText;
+        } catch (error) {
+            console.error("Translation failed:", error);
+            alert("Translation error. Please try again.");
         }
+    }
 
 
         // High Contrast Mode
