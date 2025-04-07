@@ -7,7 +7,7 @@
 A multilingual AI platform bridging the justice gap by providing free legal advice, document automation, and lawyer connectivity for underserved communities.
 
 ## Features ✨
-- **AI Legal Chatbot**: Answers legal questions in 5+ languages (English, Tamil, Hindi, etc.).
+- **AI Legal Chatbot**: Answers legal questions in English, Tamil.
 - **Document Generator**: Auto-fill templates for wills, rental agreements, and more.
 - **Lawyer Directory**: Search verified lawyers by language, expertise, and location.
 - **Voice Accessibility**: Speech-to-text and text-to-speech support.
