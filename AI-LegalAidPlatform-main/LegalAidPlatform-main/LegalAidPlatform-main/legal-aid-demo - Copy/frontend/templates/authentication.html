@@ -4,101 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal Link - User & Lawyer Login</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #f4f4f4;
-            text-align: center;
-        }
-
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px;
+            padding: 15px;
             background-color: #1A237E;
+            color: white;
             text-align: center;
         }
-        
+
+        .header-logo {
+            width: 60px;
+        }
+
         .header img {
-            width: 120px;
+            width: 80px;
             height: auto;
-            padding: 20px;
-        }
-
-        .header h1 {
-            flex-grow: 1;
-            text-align: center;
-            font-size: 36px;
-            color: white;
-            margin: 0;
-        }
-
-        .navbar {
-            background-color: #283593;
             padding: 10px;
-            text-align: center;
         }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: #FFD700;
-        }
+        /* Authentication-specific styles */
         .auth-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80vh;
+            min-height: calc(100vh - 200px);
+            padding: 40px 20px;
         }
 
         .form-box {
-            width: 350px;
+            width: 100%;
+            max-width: 500px;
             padding: 40px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-hover);
             text-align: center;
             position: relative;
+            overflow: hidden;
+        }
+
+        .form-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--secondary-color);
         }
 
         .button-box {
             display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
         }
 
         .toggle-btn {
-            width: 50%;
-            padding: 10px;
+            width: 48%;
+            padding: 12px;
             border: none;
-            background: #ddd;
+            background: transparent;
             cursor: pointer;
-            transition: 0.3s;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            position: relative;
+            transition: all var(--transition-speed);
         }
 
         .toggle-btn.active {
-            background: #1A237E;
-            color: white;
+            color: var(--primary-color);
+        }
+
+        .toggle-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--secondary-color);
         }
 
         .input-group {
             display: none;
             flex-direction: column;
-            transition: all 0.5s;
+            animation: fadeIn 0.5s ease;
         }
 
         .input-group.active {
@@ -107,53 +102,77 @@
 
         .input-field {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: all var(--transition-speed);
+        }
+
+        .input-field:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+            outline: none;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 10px;
-            background: #1A237E;
-            color: white;
+            padding: 15px;
+            background: var(--primary-color);
+            color: var(--white);
             border: none;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all var(--transition-speed);
+            box-shadow: var(--box-shadow);
         }
 
         .submit-btn:hover {
-            background: #FFD700;
-            color: #1A237E;
+            background: var(--dark-accent);
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow-hover);
         }
 
         .toggle-link {
-            margin-top: 10px;
-            font-size: 14px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-color);
         }
 
         .toggle-link a {
-            color: #1A237E;
+            color: var(--primary-color);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: all var(--transition-speed);
         }
 
         .toggle-link a:hover {
+            color: var(--accent-color);
             text-decoration: underline;
         }
 
-        footer {
-            background: #1A237E;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .form-box {
+                padding: 30px 20px;
+            }
+            
+            .button-box {
+                flex-direction: column;
+            }
+            
+            .toggle-btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
         }
     </style>
     <link rel="icon" href="TamilNadu_Logo.png" type="Image/icon type">
@@ -162,9 +181,9 @@
 
     <!-- 🔹 Header -->
     <header class="header">
-        <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem">
-        <h1>Legal Link - Login / Signup</h1>
-        <img src="TamilNadu_Logo.png " alt="Legal Scales">
+        <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo">
+        <h2>Legal Link - Login / Signup</h2>
+        <img src="TamilNadu_Logo.png" alt="Legal Scales" class="header-logo">
     </header>
 
     <nav class="navbar">
@@ -222,7 +241,7 @@
     </div>
 
     <!-- ⚖️ Footer -->
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
     </footer>
 
