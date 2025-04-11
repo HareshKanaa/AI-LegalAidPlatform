@@ -1,0 +1,97 @@
+/* Header styling */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #1A237E;
+    color: white;
+    text-align: center;
+}
+
+.header-logo {
+    width: 60px;
+}
+
+.header img {
+    width: 80px;
+    height: auto;
+    padding: 10px;
+}
+.chat-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.chat-container img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.user-message {
+    text-align: right;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.bot-message {
+    text-align: left;
+    color: #333;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.chat-input button:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 1rem;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #FFD700;
+}

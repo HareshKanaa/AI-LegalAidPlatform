@@ -1,0 +1,131 @@
+/* Header styling */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #1A237E;
+    text-align: center;
+}
+
+.header img {
+    width: 80px;
+    height: auto;
+    padding: 20px;
+}
+
+.header h1 {
+    flex-grow: 1;
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    margin: 0;
+}
+
+
+/* Lawyer Directory Styles */
+.directory-container {
+    max-width: 900px;
+    color: #1A237E;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.lawyer-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.lawyer-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.lawyer-details {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+
+.lawyer-details h3 {
+    color: var(--primary-color);
+    margin: 5px 0;
+}
+
+.lawyer-details p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 2px 0;
+}
+
+.lawyer-details span {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.btn-appointment {
+    background-color: #1A237E; /* Primary color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+    display: block;  /* Make sure it appears */
+    margin-top: 10px;
+}
+
+.btn-appointment:hover {
+    background-color: #FFD700;
+    color: #1A237E;
+}
+
+.btn-viewcases {
+    background-color: #1A237E; /* Primary color */
+    color: white;
+    border: none;
+    padding: 10px 38px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+    display: block;  /* Make sure it appears */
+    margin-top: 10px;
+}
+
+.btn-viewcases:hover {
+    background-color: #FFD700;
+    color: #1A237E;
+}
+
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 1rem;
+}
+.nav-link:hover, .nav-link.active {
+    color: #FFD700;
+}

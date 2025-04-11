@@ -1,0 +1,87 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f9;
+    transition: background-color 0.5s ease;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #1A237E;
+    text-align: center;
+}
+
+.header img {
+    width: 80px;
+    height: auto;
+    padding: 20px;
+}
+
+.header h1 {
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Accessibility Section */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    color: #1A237E;
+    font-size: 28px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Buttons */
+.btn {
+    background-color: #1A237E;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: #FFD700;
+    color: #1A237E;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+    background: #1A237E;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 1rem;
+}
