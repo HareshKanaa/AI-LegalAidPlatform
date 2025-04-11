@@ -5,96 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal Link - Accessibility Features</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* General Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f4f4f9;
-            transition: background-color 0.5s ease;
-        }
-
-        /* Header Styling */
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: #1A237E;
-            text-align: center;
-        }
-        
-        .header img {
-            width: 80px;
-            height: auto;
-            padding: 20px;
-        }
-
-        .header h1 {
-            flex-grow: 1;
-            text-align: center;
-            color: white;
-            font-size: 36px;
-            margin: 0;
-        }
-
-        /* Accessibility Section */
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .container:hover {
-            transform: scale(1.02);
-        }
-
-        h2 {
-            color: #1A237E;
-            font-size: 28px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        /* Buttons */
-        .btn {
-            background-color: #1A237E;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background 0.3s ease-in-out;
-            margin: 10px;
-        }
-
-        .btn:hover {
-            background-color: #FFD700;
-            color: #1A237E;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        footer {
-            background: #1A237E;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            font-size: 1rem;
-        }
-    </style>
-    <link rel="icon" href="TamilNadu_Logo.png" type="Image/icon type">
+    <link rel="stylesheet" href="./styles/accessibility.css">
+    <script src="./scripts/accessibility.js"></script>
+    <link rel="icon" href="./assets/TamilNadu_Logo.png" type="Image/icon type">
     <script type="text/javascript">
         function googleTranslateElementInit() {
           new google.translate.TranslateElement({
@@ -113,9 +26,9 @@
 <body>
 
     <header class="header">
-        <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo">
+        <img src="./assets/Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo">
         <h1>Accessibility Features</h1>
-        <img src="TamilNadu_Logo.png" alt="Legal Scales" class="header-logo">
+        <img src="./assets/TamilNadu_Logo.png" alt="Legal Scales" class="header-logo">
     </header>
 
     <nav class="navbar">
@@ -157,53 +70,5 @@
     <footer>
         <p class="para">&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
      </footer>
-
-    <script>
-        // Speech-to-Text (STT)
-        function startSpeechToText() {
-            const output = document.getElementById("speech-output");
-            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-            recognition.lang = "en-US";
-
-            recognition.onstart = () => { output.innerHTML = "Listening..."; };
-            recognition.onspeechend = () => { recognition.stop(); };
-            recognition.onresult = event => {
-                output.innerHTML = event.results[0][0].transcript;
-            };
-
-            recognition.start();
-        }
-
-        async function translateText() {
-            const text = document.getElementById("tts-text").value;
-            if (!text.trim()) return alert("Please enter or paste text to translate.");
-
-            try {
-                const response = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ta&dt=t&q=${encodeURIComponent(text)}`);
-                const data = await response.json();
-                const translatedText = data[0].map(item => item[0]).join(" ");
-                document.getElementById("tts-text").value = translatedText;
-            } catch (error) {
-                console.error("Translation failed:", error);
-                alert("Translation error. Please try again.");
-            }
-        }
-
-        // Font Size Adjustment
-        function changeFontSize(action) {
-            let body = document.body;
-            let currentSize = window.getComputedStyle(body, null).getPropertyValue('font-size');
-            let newSize = action === "increase" ? parseFloat(currentSize) * 1.1 : parseFloat(currentSize) * 0.9;
-            body.style.fontSize = newSize + "px";
-        }
-
-        // Keyboard Navigation
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "Escape") {
-                document.body.style.fontSize = "16px";
-                document.body.classList.remove("high-contrast");
-            }
-        });
-    </script>
 </body>
 </html>

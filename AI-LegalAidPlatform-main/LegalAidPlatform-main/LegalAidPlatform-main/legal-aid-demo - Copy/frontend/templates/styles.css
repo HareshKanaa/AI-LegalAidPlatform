@@ -475,7 +475,16 @@ footer::before {
         text-align: center;
     }
 }
-
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+  }
+  body {
+    top: 0px !important;
+  }
+  .goog-logo-link, .goog-te-gadget span {
+    display: none !important;
+  }
+  
 /* 🌀 Animations */
 @keyframes pulse {
     0% { transform: scale(1); }

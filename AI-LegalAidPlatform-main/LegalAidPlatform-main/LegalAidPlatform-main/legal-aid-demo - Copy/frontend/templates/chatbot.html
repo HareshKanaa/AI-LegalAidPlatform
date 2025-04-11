@@ -5,109 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Chatbot - Legal Link</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-
-        /* Header styling */
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px;
-            background-color: #1A237E;
-            color: white;
-            text-align: center;
-        }
-
-        .header-logo {
-            width: 60px;
-        }
-
-        .header img {
-            width: 80px;
-            height: auto;
-            padding: 10px;
-        }
-        .chat-container {
-            max-width: 600px;
-            margin: 50px auto;
-            background: var(--white);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-            text-align: center;
-        }
-        
-        .chat-container img {
-            width: 120px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-        
-        .chat-messages {
-            height: 300px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            text-align: left;
-            background: #f9f9f9;
-            border-radius: 5px;
-        }
-        
-        .user-message {
-            text-align: right;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-        
-        .bot-message {
-            text-align: left;
-            color: #333;
-        }
-        
-        .chat-input {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .chat-input input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        
-        .chat-input button {
-            background: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .chat-input button:hover {
-            background: var(--secondary-color);
-            color: var(--primary-color);
-        }
-
-        
-        footer {
-            background: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            font-size: 1rem;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: #FFD700;
-        }
-        
-
-    </style>
-    <link rel="icon" href="TamilNadu_Logo.png" type="Image/icon type">
+    <link rel="stylesheet" href="./styles/chatbot.css">
+    <link rel="icon" href="./assets/TamilNadu_Logo.png" type="Image/icon type">
+    <script src="./scripts/chatbot.js"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
           new google.translate.TranslateElement({
@@ -128,9 +28,9 @@
 
     <!-- 🔹 Header -->
     <header class="header">
-        <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo">
+        <img src="./assets/Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo">
         <h2>AI ChatBot - Legal Link</h2>
-        <img src="TamilNadu_Logo.png" alt="Legal Scales" class="header-logo">
+        <img src="./assets/TamilNadu_Logo.png" alt="Legal Scales" class="header-logo">
     </header>
 
 
@@ -145,7 +45,7 @@
     </nav>
 
     <div class="chat-container">
-        <img src="chatbot-icon.png" alt="Chatbot Icon">
+        <img src="./assets/chatbot-icon.png" alt="Chatbot Icon">
         <h2>Welcome! How can I assist you today?</h2>
         
         <div class="chat-messages" id="chatMessages">
@@ -155,46 +55,13 @@
         <div class="chat-input">
             <input type="text" id="userInput" placeholder="Type your message...">
             <button onclick="sendMessage()">Send</button>
+            <button onclick="startVoiceRecognition()">🎙️</button>
         </div>
     </div>
-
-    <script>
-        function sendMessage() {
-            const userInput = document.getElementById("userInput").value.trim();
-            const chatBox = document.getElementById("chatMessages");
-
-            if (userInput === "") return;
-
-            // Display user message
-            const userMessage = `<p class="user-message"><strong>You:</strong> ${userInput}</p>`;
-            chatBox.innerHTML += userMessage;
-
-            // Bot Responses
-            let botResponse = "<p class='bot-message'><strong>Bot:</strong> I'm not sure, but I can help with general legal guidance.</p>";
-
-            if (userInput.toLowerCase().includes("lawyer")) {
-                botResponse = "<p class='bot-message'><strong>Bot:</strong> You can find a lawyer in our <a href='index.html#lawyers'>Lawyer Directory</a>.</p>";
-            } else if (userInput.toLowerCase().includes("contract")) {
-                botResponse = "<p class='bot-message'><strong>Bot:</strong> Need a legal contract? Visit <a href='index.html#templates'>Legal Templates</a>.</p>";
-            } else if (userInput.toLowerCase().includes("rights")) {
-                botResponse = "<p class='bot-message'><strong>Bot:</strong> Everyone has legal rights! Let me know what you need help with.</p>";
-            }
-
-            // Display bot response
-            setTimeout(() => {
-                chatBox.innerHTML += botResponse;
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }, 500);
-
-            document.getElementById("userInput").value = "";
-        }
-    </script>
 
     <!-- ⚖️ Footer -->
     <footer>
        <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
     </footer>
-
-
 </body>
 </html>

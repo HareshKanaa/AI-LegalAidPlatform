@@ -5,141 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lawyer Directory - Legal Link</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Header styling */
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: #1A237E;
-            text-align: center;
-        }
-        
-        .header img {
-            width: 80px;
-            height: auto;
-            padding: 20px;
-        }
-
-        .header h1 {
-            flex-grow: 1;
-            color: white;
-            text-align: center;
-            font-size: 36px;
-            margin: 0;
-        }
-
-
-        /* Lawyer Directory Styles */
-        .directory-container {
-            max-width: 900px;
-            color: #1A237E;
-            margin: auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .lawyer-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            margin: 15px 0;
-            text-align: left;
-        }
-
-        .lawyer-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .lawyer-details {
-            flex-grow: 1;
-            margin-left: 15px;
-        }
-
-        .lawyer-details h3 {
-            color: var(--primary-color);
-            margin: 5px 0;
-        }
-
-        .lawyer-details p {
-            font-size: 0.9rem;
-            color: #555;
-            margin: 2px 0;
-        }
-
-        .lawyer-details span {
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-
-        .btn-appointment {
-            background-color: #1A237E; /* Primary color */
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.3s;
-            display: block;  /* Make sure it appears */
-            margin-top: 10px;
-        }
-
-        .btn-appointment:hover {
-            background-color: #FFD700;
-            color: #1A237E;
-        }
-
-        .btn-viewcases {
-            background-color: #1A237E; /* Primary color */
-            color: white;
-            border: none;
-            padding: 10px 38px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.3s;
-            display: block;  /* Make sure it appears */
-            margin-top: 10px;
-        }
-
-        .btn-viewcases:hover {
-            background-color: #FFD700;
-            color: #1A237E;
-        }
-
-
-        .search-bar {
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            font-size: 1rem;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: #FFD700;
-        }
-
-    </style>
-    <link rel="icon" href="TamilNadu_Logo.png" type="Image/icon type">
+    <link rel="stylesheet" href="./styles/lawyers.css">
+    <link rel="icon" href="./assets/TamilNadu_Logo.png" type="Image/icon type">
+    <script src="./scripts/lawyers.js"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
           new google.translate.TranslateElement({
@@ -159,9 +27,9 @@
 
     <!-- 🔹 Header -->
     <header class="header">
-        <img src="Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo">
+        <img src="./assets/Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo">
         <h2>Legal Link - Lawyer Directory</h2>
-        <img src="TamilNadu_Logo.png" alt="Legal Scales" class="header-logo">
+        <img src="./assets/TamilNadu_Logo.png" alt="Legal Scales" class="header-logo">
     </header>
 
     <nav class="navbar">
@@ -183,81 +51,6 @@
             <!-- Lawyer profiles will be loaded dynamically -->
         </div>
     </div>
-
-    
-    <script>
-        const lawyers = [
-            { name: "Adv. Dr Diraviam Dinesh", specialty: "Criminal Law", language: " Tamil, English", location: "Chennai", img: "lawyers/lawyer1.jpg" },
-            { name: "Adv. Priya Sharma", specialty: "Family Law", language: "Tamil, English", location: "Dindigul", img: "lawyers/lawyer2.jpg" },
-            { name: "Adv. Vikram Patel", specialty: "Corporate Law", language: "Tamil, English", location: "Madurai", img: "lawyers/lawyer3.jpg" },
-            { name: "Adv. Anjali Verma", specialty: "Immigration Law", language: "Tamil, English", location: "Coimbatore", img: "lawyers/lawyer4.jpg" },
-            { name: "Adv. Sunil Menon", specialty: "Property Law", language: "Tamil, English", location: "Trichy", img: "lawyers/lawyer5.jpg" }
-        ];
-
-        function loadLawyers() {
-    let lawyerList = document.getElementById("lawyer-list");
-    lawyerList.innerHTML = "";
-
-    lawyers.forEach(lawyer => {
-        let card = document.createElement("div");
-        card.classList.add("lawyer-card");
-        
-        card.innerHTML = `
-            <img src="${lawyer.img}" class="lawyer-img" alt="${lawyer.name}">
-            <div class="lawyer-details">
-                <h3>${lawyer.name}</h3>
-                <p><span>Specialty:</span> ${lawyer.specialty}</p>
-                <p><span>Languages:</span> ${lawyer.language}</p>
-                <p><span>Location:</span> ${lawyer.location}</p>
-                <button class="btn-appointment" onclick="bookAppointment('${lawyer.name}')">Book Appointment</button>
-            </div>
-        `;
-        
-        lawyerList.appendChild(card);
-    });
-}
-
-
-        function searchLawyers() {
-            let input = document.getElementById("search").value.toLowerCase();
-            let filteredLawyers = lawyers.filter(lawyer =>
-                lawyer.name.toLowerCase().includes(input) ||
-                lawyer.specialty.toLowerCase().includes(input) ||
-                lawyer.location.toLowerCase().includes(input)
-            );
-
-            let lawyerList = document.getElementById("lawyer-list");
-            lawyerList.innerHTML = "";
-
-            filteredLawyers.forEach(lawyer => {
-                let card = document.createElement("div");
-                card.classList.add("lawyer-card");
-                card.innerHTML = `
-                    <img src="${lawyer.img}" class="lawyer-img" alt="${lawyer.name}">
-                    <div class="lawyer-details">
-                        <h3>${lawyer.name}</h3>
-                        <p><span>Specialty:</span> ${lawyer.specialty}</p>
-                        <p><span>Languages:</span> ${lawyer.language}</p>
-                        <p><span>Location:</span> ${lawyer.location}</p>
-                    </div>
-                    <button class="btn-appointment" onclick="bookAppointment('${lawyer.name}')">Book Appointment</button>
-                `;
-                lawyerList.appendChild(card);
-            });
-        }
-
-        function bookAppointment(lawyerName) {
-            alert(`Booking appointment with ${lawyerName}. Feature coming soon!`);
-        }
-
-        function viewcases(lawyerName) {
-            alert(`Previous cases of ${lawyerName}. Feature coming soon!`);
-        }
-
-        // Load lawyers on page load
-        window.onload = loadLawyers;
-    </script>
-
      <!-- ⚖️ Footer -->
      <footer>
         <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
