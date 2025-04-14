@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Portal - Legal Link</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/lawyer-portal.css">
+    <link rel="icon" href="./assets/TamilNadu_Logo.png" type="Image/icon type">
+    <script src="./scripts/lawyer-portal.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',  // Default language
+            includedLanguages: 'en,ta,hi,te,ml,kn,ur',  // Add your desired languages
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        }
+      </script>
+      
+      <script type="text/javascript" 
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+      </script>
+    <div id="google_translate_element"></div>
+</head>
+<body>
+    <!-- 🔹 Header -->
+    <header class="header">
+        <img src="./assets/Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo">
+        <h2>Lawyer Portal - Manage Your Cases</h2>
+        <img src="./assets/TamilNadu_Logo.png" alt="Legal Scales" class="header-logo">
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="lawyer-portal.html" class="nav-link active">Lawyer Portal</a>
+        <a href="chatbot.html" class="nav-link">Chatbot</a>
+        <a href="#cms" class="nav-link">Case Management</a>
+        <a href="#dmc" class="nav-link">Document Management</a>
+        <a href="#cc" class="nav-link">Consultation Scheduler</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+    </nav>
+
+    <!-- 📊 Dashboard Overview -->
+    <div class="dashboard-container">
+        <h2>Dashboard Overview</h2>
+        <div id="dashboard">
+            <p>Total Cases: <span id="total-cases">0</span></p>
+            <p>Pending Actions: <span id="pending-actions">0</span></p>
+            <p>Scheduled Consultations: <span id="scheduled-consultations">0</span></p>
+            <p>Notifications: <span id="notifications">0</span></p>
+        </div>
+    </div>
+
+    <!-- 📂 Case Management System -->
+    <div id="cms"  class="case-management-container">
+        <h2>Case Management</h2>
+        
+        <!-- Case Filters -->
+        <div class="case-filters">
+            <select id="status-filter">
+                <option value="all">All Statuses</option>
+                <option value="open">Open</option>
+                <option value="closed">Closed</option>
+                <option value="pending">Pending</option>
+            </select>
+            
+            <select id="type-filter">
+                <option value="all">All Types</option>
+                <option value="criminal">Criminal</option>
+                <option value="civil">Civil</option>
+                <option value="family">Family</option>
+            </select>
+            
+            <input type="date" id="date-filter">
+            <button onclick="applyFilters()">Apply Filters</button>
+        </div>
+        
+        <!-- Case List -->
+        <div id="case-list">
+            <!-- Cases will be loaded dynamically -->
+        </div>
+        
+        <!-- Case Details Modal -->
+        <div id="case-details-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="case-title">Case Details</h3>
+                <div id="case-client-info"></div>
+                <div id="case-description"></div>
+                <div id="case-timeline"></div>
+                <textarea id="case-notes" placeholder="Add private notes..."></textarea>
+                <button onclick="saveCaseNotes()">Save Notes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 📄 Document Management -->
+    <div id="dmc" class="document-management-container">
+        <h2>Document Management</h2>
+        
+        <!-- Document Upload -->
+        <div class="document-upload">
+            <h3>Upload Documents</h3>
+            <form id="document-upload-form">
+                <input type="file" id="document-upload-input" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                <button type="submit">Upload</button>
+            </form>
+            <div id="upload-status"></div>
+        </div>
+        
+        <!-- Document List -->
+        <div class="document-list">
+            <h3>Client Documents</h3>
+            <div class="document-filters">
+                <input type="text" id="document-search" placeholder="Search documents...">
+                <select id="document-type-filter">
+                    <option value="all">All Types</option>
+                    <option value="pdf">PDF</option>
+                    <option value="doc">Word</option>
+                    <option value="image">Images</option>
+                </select>
+            </div>
+            <div id="document-list-items">
+                <!-- Documents will be loaded here -->
+            </div>
+        </div>
+        
+        <!-- Template Management -->
+        <div class="template-management">
+            <h3>Legal Templates</h3>
+            <button class="save-template-btn">Save Current as Template</button>
+            <div id="template-list">
+                <!-- Templates will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 💬 Messaging System -->
+    <div id="messaging" class="messaging-container">
+        <h2>Client Messaging</h2>
+        
+        <div class="messaging-grid">
+            <!-- Conversation List -->
+            <div class="conversation-list">
+                <h3>Active Conversations</h3>
+                <div class="search-conversations">
+                    <input type="text" id="conversation-search" placeholder="Search conversations...">
+                </div>
+                <div id="conversations">
+                    <!-- Conversations will be loaded here -->
+                </div>
+            </div>
+            
+            <!-- Chat Interface -->
+            <div class="chat-interface">
+                <div class="chat-header">
+                    <h3 id="current-conversation">Select a conversation</h3>
+                    <div class="translation-controls">
+                        <label>
+                            <input type="checkbox" id="auto-translate" checked>
+                            Auto-translate messages
+                        </label>
+                    </div>
+                </div>
+                
+                <div id="message-container">
+                    <!-- Messages will appear here -->
+                </div>
+                
+                <div class="message-input">
+                    <div class="attachment-options">
+                        <button id="attach-file" title="Attach file">
+                            <i class="attachment-icon"></i>
+                        </button>
+                        <button id="record-voice" title="Record voice note">
+                            <i class="voice-icon"></i>
+                        </button>
+                    </div>
+                    <textarea id="message-input" placeholder="Type your message here..."></textarea>
+                    <button id="send-message">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 📅 Consultation Scheduler -->
+    <div id="cc" class="consultation-container">
+        <h2>Consultation Scheduler</h2>
+        
+        <div class="scheduler-grid">
+            <!-- Calendar View -->
+            <div class="calendar-view">
+                <h3>Calendar</h3>
+                <div id="calendar"></div>
+                <div class="calendar-actions">
+                    <button class="prev-week">Previous Week</button>
+                    <button class="next-week">Next Week</button>
+                </div>
+            </div>
+            
+            <!-- Availability Settings -->
+            <div class="availability-settings">
+                <h3>Availability Preferences</h3>
+                <div class="time-slots">
+                    <h4>Working Hours</h4>
+                    <div class="day-availability">
+                        <label>Monday:</label>
+                        <input type="time" class="start-time" value="09:00">
+                        <span>to</span>
+                        <input type="time" class="end-time" value="17:00">
+                    </div>
+                    <!-- Repeat for other weekdays -->
+                    <button class="save-availability">Save Availability</button>
+                </div>
+            </div>
+            
+            <!-- Booking Management -->
+            <div class="booking-management">
+                <h3>Bookings</h3>
+                <div class="booking-list">
+                    <div class="booking-filter">
+                        <select id="booking-status">
+                            <option value="upcoming">Upcoming</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div id="bookings-container"></div>
+                </div>
+            </div>
+            
+            <!-- Video Integration -->
+            <div class="video-integration">
+                <h3>Video Call Integration</h3>
+                <div class="video-options">
+                    <select id="video-service">
+                        <option value="zoom">Zoom</option>
+                        <option value="meet">Google Meet</option>
+                        <option value="teams">Microsoft Teams</option>
+                    </select>
+                    <button class="connect-video">Connect</button>
+                </div>
+            </div>
+            
+            <!-- Reminder Settings -->
+            <div class="reminder-settings">
+                <h3>Automated Reminders</h3>
+                <div class="reminder-options">
+                    <label>
+                        <input type="checkbox" checked> Email Reminders
+                    </label>
+                    <label>
+                        <input type="checkbox"> SMS Reminders
+                    </label>
+                    <div class="reminder-timing">
+                        <span>Send reminders</span>
+                        <select>
+                            <option value="1">1 hour</option>
+                            <option value="24" selected>24 hours</option>
+                            <option value="48">48 hours</option>
+                        </select>
+                        <span>before appointment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ⚖️ Footer -->
+    <footer>
+        <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
