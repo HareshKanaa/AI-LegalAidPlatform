@@ -29,6 +29,22 @@ function handleProfilePhotoChange(event) {
     }
 }
 
+document.getElementById('profile-photo').addEventListener('change', function (event) {
+    const preview = document.getElementById('profile-photo-preview');
+    const file = event.target.files[0];
+
+    if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            preview.innerHTML = `<img src="${e.target.result}" alt="Profile Photo">`;
+        };
+        reader.readAsDataURL(file);
+    } else {
+        preview.innerHTML = ''; // Reset if not an image
+    }
+});
+
+
 // Handle certifications upload
 function handleCertificationsUpload(event) {
     const files = event.target.files;

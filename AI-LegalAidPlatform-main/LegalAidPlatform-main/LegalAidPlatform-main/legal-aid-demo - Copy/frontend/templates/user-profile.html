@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles/user-profile.css">
+    <script src="./scripts/user-profile.js" defer></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',  // Default language
+            includedLanguages: 'en,ta,hi,te,ml,kn,ur',  // Add your desired languages
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        }
+      </script>  
+      <script type="text/javascript" 
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+      </script>   
+      
+      <div id="google_translate_element"></div>
+</head>
+<body>
+    <header class="header">
+        <img src="./assets/Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo">
+        <h2>Profile Management</h2>
+        <img src="./assets/TamilNadu_Logo.png" alt="Legal Scales" class="header-logo">
+    </header>
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a> 
+        <a href="authentication.html" class="nav-link">Login / Signup</a> 
+        <a href="chatbot.html" class="nav-link">Chatbot</a> 
+        <a href="templates.html" class="nav-link">Legal Templates</a> 
+        <a href="lawyers.html" class="nav-link">Lawyer Directory</a>
+        <a href="schemes.html" class="nav-link">Government Schemes</a> 
+        <a href="acccessibility.html" class="nav-link">Accessibility</a>
+        <a href="user-profile.html" class="nav-link active">Profile</a>
+    </nav>
+    <main class="profile-container">
+        <h3 id="tit">Enter Your Details</h3>
+        <form id="user-profile-form" novalidate>
+            <div class="form-group">
+                <label for="profile-photo">Profile Photo:</label>
+                <input type="file" id="profile-photo" name="profile-photo" accept="image/*" />
+                <div id="profile-photo-preview-container"></div>
+            </div>
+            <div class="form-group">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required />
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" />
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="bio">Short Bio:</label>
+                <textarea id="bio" name="bio" rows="4"></textarea>
+            </div>
+            <button type="submit" class="save">Save Profile</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

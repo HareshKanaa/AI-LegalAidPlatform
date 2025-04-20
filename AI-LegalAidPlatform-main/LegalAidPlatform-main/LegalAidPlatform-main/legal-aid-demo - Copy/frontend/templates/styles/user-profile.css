@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #1A237E;
+    color: white;
+    text-align: center;
+  }
+  
+  .header-logo {
+    width: 60px;
+  }
+  
+  .header img {
+    width: 80px;
+    height: auto;
+    padding: 10px;
+  }
+  
+  
+  .nav-link:hover, .nav-link.active {
+    color: #FFD700;
+  }
+  
+  .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+  }
+    body {
+    top: 0px !important;
+    }
+    .goog-logo-link, .goog-te-gadget span {
+    display: none !important;
+    }
+  
+
+.profile-container {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #1A237E;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #f9fafb;
+    transition: border-color 0.25s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border-color: #3498db;
+    background-color: #fff;
+    outline: none;
+}
+
+.save {
+    background-color: #1A237E;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save:hover {
+    background-color: #16357a;
+}
+
+#profile-photo-preview-container {
+    margin-top: 10px;
+}
+
+#profile-photo-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
