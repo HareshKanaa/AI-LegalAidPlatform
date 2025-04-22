@@ -26,7 +26,7 @@ document.querySelectorAll('.module .btn').forEach(button => {
     });
 });
 
-// 🎭 Responsive Navbar Toggle for Mobile
+/* 🎭 Responsive Navbar Toggle for Mobile
 const navbarToggle = document.createElement('div');
 navbarToggle.innerHTML = "&#9776;"; // Hamburger icon
 navbarToggle.classList.add('navbar-toggle');
@@ -34,7 +34,7 @@ document.querySelector('.navbar').appendChild(navbarToggle);
 
 navbarToggle.addEventListener('click', function () {
     document.querySelector('.navbar').classList.toggle('open');
-});
+}); */
 
 // ✨ Hero Image Fade-in Effect on Scroll
 window.addEventListener('scroll', function () {
