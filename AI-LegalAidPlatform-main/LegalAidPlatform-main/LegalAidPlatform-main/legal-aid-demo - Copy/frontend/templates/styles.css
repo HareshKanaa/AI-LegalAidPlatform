@@ -256,7 +256,7 @@ img {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
+/*Chatbot bottom-Right*/
 .chatbot-icon {
     position: fixed;
     bottom: 20px;
@@ -300,44 +300,6 @@ img {
         transform: scale(1);
     }
 }
-
-.announcement-wrapper {
-    overflow: hidden;
-    white-space: nowrap;
-    background: #FFD700;
-    padding: 0px 0px;
-    position: relative;
-    font-size: 14px;
-    line-height: 1.2;
-  }
-  
-  .announcement-banner p {
-    display: inline-block;
-    padding: 4px 0; /* Reduced padding for less height */
-    font-weight: 600;
-    font-size: 0.9rem; /* Slightly smaller text */
-    animation: scrollLeft 10s linear infinite;
-    margin: 0;
-}
-
-  .announcement-banner {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scroll-left 15s linear infinite;
-  }
-  
-  .announcement-wrapper:hover .announcement-banner {
-    animation-play-state: paused;
-  }
-  
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
 /* 📌 Enhanced Main Sections */
 .container {
     padding: 60px 20px;
