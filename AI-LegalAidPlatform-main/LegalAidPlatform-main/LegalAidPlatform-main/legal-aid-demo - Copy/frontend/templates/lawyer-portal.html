@@ -38,9 +38,17 @@
         <a href="#cms" class="nav-link">Case Management</a>
         <a href="#dmc" class="nav-link">Document Management</a>
         <a href="#cc" class="nav-link">Consultation Scheduler</a>
-        <a href="profile.html" class="nav-link">Profile</a>
+        <div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">Profile ▼</button>
+            <div class="dropdown-menu">
+              <a href="user-profile.html">User Profile</a>
+              <a href="profile.html">Lawyer Profile</a>
+            </div>
+          </div>
     </nav>
-
+    <div class="chatbot-icon" onclick="location.href='chatbot.html'">
+        <img src="./assets/chatbot-icon.png" alt="Chatbot" />
+    </div>
     <!-- 📊 Dashboard Overview -->
     <div class="dashboard-container">
         <h2>Dashboard Overview</h2>

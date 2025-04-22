@@ -257,6 +257,75 @@ img {
     to { opacity: 1; }
 }
 
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #FFD700; /* yellowgold shade */
+    border-radius: 50%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    animation: bounceIn 0.6s ease;
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.chatbot-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+/* Bounce In Animation */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.announcement-banner {
+    background-color: #FFD700;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-banner p {
+    display: inline-block;
+    padding: 4px 0; /* Reduced padding for less height */
+    font-weight: 600;
+    font-size: 0.9rem; /* Slightly smaller text */
+    animation: scrollLeft 25s linear infinite;
+    margin: 0;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 /* 📌 Enhanced Main Sections */
 .container {
     padding: 60px 20px;
