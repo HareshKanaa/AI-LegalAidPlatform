@@ -300,6 +300,44 @@ img {
         transform: scale(1);
     }
 }
+/* Tooltip Text - Positioned to the left */
+.tooltip {
+    position: absolute;
+    right: 70px; /* position to the left of the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+/* Show tooltip on hover */
+.chatbot-icon:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Optional: Add a small arrow pointing right */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+}
+
+
 /* 📌 Enhanced Main Sections */
 .container {
     padding: 60px 20px;
