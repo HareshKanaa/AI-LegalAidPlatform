@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book Appointment - Legal Link</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="./styles/lawyer-portal.css">
-  <link rel="icon" href="./assets/TamilNadu_Logo.png" type="image/icon type">
-  <script src="./scripts/bookappointment.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles/lawyer-portal.css" />
+  <link rel="icon" href="./assets/TamilNadu_Logo.png" type="image/icon type" />
+  <script src="./scripts/bookappointment.js" defer></script>
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
@@ -18,75 +18,116 @@
     }
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<style>
+  <style>
     .form-submit-btn {
-        display: inline-block;
-        margin-top: 25px;
-        width: 100%;
-        padding: 14px 0;
-        font-size: 16px;
-        background-color: #1A237E; /* Green - success theme */
-        color: #fff;
-        font-weight: bold;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px 0;
+      font-size: 16px;
+      background-color: #1A237E;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-</style>
+
+    .form-submit-btn:hover {
+      background-color: #0d1b5e;
+      transform: scale(1.02);
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #1A237E;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- 🔹 Header -->
   <header class="header">
-    <img src="./assets/Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo">
+    <img src="./assets/Emblem_of_India_(Gold).png" alt="Indian Emblem" class="header-logo" />
     <h2>Book Appointment</h2>
-    <img src="./assets/TamilNadu_Logo.png" alt="Legal Scales" class="header-logo">
+    <img src="./assets/TamilNadu_Logo.png" alt="Legal Scales" class="header-logo" />
   </header>
 
-  <!-- 🔸 Navigation Bar -->
   <nav class="navbar">
     <a href="index.html" class="nav-link">Home</a>
-    <a href="authentication.html" class="nav-link">Login / Signup</a> 
+    <a href="authentication.html" class="nav-link">Login / Signup</a>
     <a href="chatbot.html" class="nav-link">Chatbot</a>
     <a href="templates.html" class="nav-link">Legal Templates</a>
     <a href="lawyers.html" class="nav-link">Lawyer Directory</a>
     <a href="schemes.html" class="nav-link">Government Schemes</a>
     <div class="nav-dropdown">
-      <button class="nav-link dropdown-toggle">Profile ▼</button>
+      <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Profile ▼</button>
       <div class="dropdown-menu">
         <a href="user-profile.html">User Profile</a>
         <a href="profile.html">Lawyer Profile</a>
       </div>
     </div>
   </nav>
+
   <div class="chatbot-icon" onclick="location.href='chatbot.html'">
     <img src="./assets/chatbot-icon.png" alt="Chatbot" />
     <span class="tooltip">Need legal help? I’m just a click away!</span>
-  </div> 
-  <!-- 📝 Appointment Form -->
+  </div>
+
   <div class="dashboard-container">
     <h2>Schedule Your Legal Appointment</h2>
     <div class="form-container">
-      <form action="submit_appointment.php" method="POST" class="styled-form">
+      <form id="appointmentForm" action="submit_appointment.php" method="POST" class="styled-form">
         <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required aria-required="true" />
 
-        <label for="issue">Case Issue</label>
-        <input type="text" id="issue" name="issue" required>
+        <label for="issue">Case Type</label>
+        <select id="issue" name="issue" required aria-required="true">
+          <option value="">-- Select Case Type --</option>
+          <option value="civil">Civil</option>
+          <option value="criminal">Criminal</option>
+          <option value="family">Family</option>
+          <option value="property">Property</option>
+          <option value="other">Other</option>
+        </select>
 
         <label for="complaint">Detailed Complaint</label>
-        <textarea id="complaint" name="complaint" required></textarea>
+        <textarea id="complaint" name="complaint" rows="5" required aria-required="true"></textarea>
+
+        <label for="date">Preferred Appointment Date</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="time">Preferred Time</label>
+        <input type="time" id="time" name="time" required />
 
         <button type="submit" class="form-submit-btn">Submit Appointment</button>
       </form>
     </div>
   </div>
 
-  <!-- ⚖️ Footer -->
   <footer>
     <p>&copy; 2025 AI Legal Aid Platform | All Rights Reserved</p>
   </footer>
+
+  <script>
+    document.getElementById("appointmentForm").addEventListener("submit", function(e) {
+      alert("✅ Your appointment has been submitted successfully!");
+    });
+  </script>
 
 </body>
 </html>
